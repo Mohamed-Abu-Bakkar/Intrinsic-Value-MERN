@@ -4,15 +4,22 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node dcf-backend / server.js",
+    "start": "npm run postinstall && node dcf-backend/server.js",
     "dev": "cd dcf-client && npm run dev",
-    "build":"cd dcf-client && npm i && npm run build"
-
+    "build": "cd dcf-client && npm i && npm run build",
+    "postinstall": "cd dcf-backend && npm i && cd ../dcf-client && npm i"
   },
   "keywords": [
     "stock"
   ],
   "author": "Mohamed Abu",
   "license": "MIT",
-  "description": ""
+  "description": "",
+
+  "dependencies": {
+    "vite": "^5.0.0"
+  },
+  "engines": {
+    "node": "18.x"
+  }
 }
