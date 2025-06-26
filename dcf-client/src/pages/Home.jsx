@@ -1,6 +1,6 @@
 const handleCalculate = async (data) => {
   try {
-    const response = await fetch('http://localhost:5000/api/calculate-dcf', {
+    const response = await fetch('/api/calculate-dcf', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
