@@ -64,14 +64,15 @@ app.post('/api/calculate-dcf', (req, res) => {
 const path = require('path');
 
 
+// === Serve Frontend
+const frontendPath = path.join(__dirname, '..', 'ledger-frontend', 'dist');
+app.use(express.static(frontendPath));
 
-if (process.env.NODE_ENV === 'production') {
-  const clientBuildPath = path.join(__dirname, '../dcf-client/dist');
-  app.use(express.static(clientBuildPath));
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(clientBuildPath, 'index.html'));
-  });
-}
+app.get(/^\/(?!api\/).*/, (req, res) => {
+  res.sendFile(path.resolve(frontendPath, 'index.html'));
+});
+// === Start Server
+
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
