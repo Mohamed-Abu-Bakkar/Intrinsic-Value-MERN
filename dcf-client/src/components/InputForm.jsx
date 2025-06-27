@@ -24,7 +24,7 @@ const InputForm = ({ onCalculate }) => {
 
   const fetchPrice = async (ticker) => {
     try {
-      const response = await fetch(`https://intrinsic-value-mern.onrender.com/api/price/${ticker}`);
+      const response = await fetch(`api/price/${ticker}`);
       const data = await response.json();
       if (data.price) {
         setCurrentPrice(data.price);
