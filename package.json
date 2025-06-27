@@ -7,7 +7,7 @@
     "start": "npm run postinstall && node dcf-backend/server.js",
     "dev": "cd dcf-client && npm run dev",
     "build": "cd dcf-client && npm i && npm run build",
-    "postinstall": "cd dcf-backend && npm i && cd ../dcf-client && npm i"
+    "postinstall": "cd dcf-backend && npm i && npm install yahoo-finance2 && cd ../dcf-client && npm i"
   },
   "keywords": [
     "stock"
