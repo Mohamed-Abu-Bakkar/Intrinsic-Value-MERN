@@ -4,6 +4,7 @@ const cors = require('cors');
 const app = express();
 const port = 5000;
 
+
 app.use(cors());
 app.use(express.json());
 
@@ -58,6 +59,11 @@ app.post('/api/calculate-dcf', (req, res) => {
     intrinsicValuePerShare
   });
 });
+
+// Serve static files in production
+const path = require('path');
+
+
 
 if (process.env.NODE_ENV === 'production') {
   const clientBuildPath = path.join(__dirname, '../dcf-client/dist');
