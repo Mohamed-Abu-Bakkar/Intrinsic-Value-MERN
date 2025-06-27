@@ -65,7 +65,7 @@ const path = require('path');
 
 
 // === Serve Frontend
-const frontendPath = path.join(__dirname, '..', 'ledger-frontend', 'dist');
+const frontendPath = path.join(__dirname, '..', 'dcf-frontend', 'dist');
 app.use(express.static(frontendPath));
 
 app.get(/^\/(?!api\/).*/, (req, res) => {
